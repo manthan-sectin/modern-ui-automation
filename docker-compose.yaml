@@ -1,0 +1,55 @@
+version: "3.8"
+
+services:
+  selenium-hub:
+    image: selenium/hub:latest
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+    restart: unless-stopped
+
+  chrome:
+    image: selenium/node-chrome:latest
+    container_name: chrome-node
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    restart: unless-stopped
+
+  firefox:
+    image: selenium/node-firefox:latest
+    container_name: firefox-node
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    restart: unless-stopped
+
+  cucumber-testcase-chrome:
+    image: cucumbertestcaseimage
+    container_name: cucumber-chrome
+    depends_on:
+      - selenium-hub
+    environment:
+      - browser=Chrome
+    volumes:
+      - ./dockerreportchrome:/home/seleniumbddtestframework/reports
+    restart: "no"
+
+  cucumber-testcase-firefox:
+    image: cucumbertestcaseimage
+    container_name: cucumber-firefox
+    depends_on:
+      - selenium-hub
+    environment:
+      - browser=Firefox
+    volumes:
+      - ./dockerreportfirefox:/home/seleniumbddtestframework/reports
+    restart: "no"

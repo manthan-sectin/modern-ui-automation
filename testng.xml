@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite"  thread-count="3">
+  <!--  <parameter name="browser" value="chrome" />  -->
+    
+    <test name="Chrome Test">
+        
+        <classes>
+        <class name="tests.LoginTest" />
+     <class name="tests.LoginTest2Locked" />
+             <class name="tests.LoginTest3ProblemUser" />
+             
+             
+        </classes>
+    </test>
+    
+   <test name="Chrome Test">
+        
+        <classes>
+        <class name="runners.TestRunner1" />
+    
+    
+      
+             
+        </classes>
+    </test>
+    
+ 
+</suite>

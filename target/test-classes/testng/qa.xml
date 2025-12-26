@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Parallel Suite" verbose="2"  thread-count="3">
+    <parameter name="reportDir" value="reports" />
+  
+    <test name="Chrome Test">
+        
+        <classes>
+            <class name="tests.LoginTest" />
+            <class name="tests.LoginTest2Locked" />
+        </classes>
+    </test>
+       
+
+</suite>

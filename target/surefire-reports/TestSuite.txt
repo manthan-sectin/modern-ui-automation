@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 71.847 s <<< FAILURE! - in TestSuite
+runners.TestRunner1.runScenario["Validate login with multiple credential sets", "Sauce Demo Login Validation"](2)  Time elapsed: 13.73 s  <<< FAILURE!
+java.lang.AssertionError: Expected error not found. Actual: Epic sadface: Sorry, this user has been locked out. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at stepDefinitions.LoginStepsForSauceDemo.the_user_should_see(LoginStepsForSauceDemo.java:57)
+	at ✽.the user should see "Epic sadface: Sorry, this user is locked out."(file:///D:/BDDWithDDT/src/test/resources/features/SauceDemoLogin.feature:12)
+

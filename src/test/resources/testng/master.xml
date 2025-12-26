@@ -1,0 +1,7 @@
+<suite name="Master Suite">
+    <suite-files>
+        <suite-file path="src/test/resources/testng/smoke.xml"/>
+        <suite-file path="src/test/resources/testng/qa.xml"/>
+        <!-- Add more as needed -->
+    </suite-files>
+</suite>
