@@ -44,4 +44,33 @@ to improve test readability and maintainability.
 
 ---
 
+▶️ How to Run
+
+Test execution is centrally controlled via pom.xml using Maven Surefire.
+The configured TestNG XML is picked automatically for all execution modes.
+
+1️⃣ Local Execution
+mvn clean test
+
+2️⃣ Jenkins Pipeline with docker (Either manual execution or set up CRON job) (CI)
+
+Jenkins pulls code from GitHub
+
+Builds Docker image
+
+Executes mvn clean test inside container
+
+TestNG suite is picked from pom.xml
+
+Reports archived in Jenkins
+
+🔁 Change Test Suite
+
+Update the suite reference in pom.xml:
+
+<suiteXmlFile>testng.xml</suiteXmlFile>
+
+
+No changes required in Jenkins, Dockerfile, or Docker Compose.
+
 
