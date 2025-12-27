@@ -26,7 +26,7 @@ to improve test readability and maintainability.
 - Parallel execution using **Selenium Grid**
 - Dockerized execution for consistency across environments
 - CI/CD integration with **Jenkins**
-- Execution time optimized from **~10 hours to 3–4 hours**
+- We can reduce execution time optimized from **~10 hours to 3–4 hours**
 - Modular, reusable, and maintainable framework design
 
 ---
